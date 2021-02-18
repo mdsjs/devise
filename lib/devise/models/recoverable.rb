@@ -96,7 +96,8 @@ module Devise
         end
 
         def send_reset_password_instructions_notification(token)
-          send_devise_notification(:reset_password_instructions, token, {})
+          #send_devise_notification(:reset_password_instructions, token, {})
+          User.send_password_reset(self, token)
         end
 
         if Devise.activerecord51?
