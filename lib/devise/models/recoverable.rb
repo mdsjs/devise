@@ -49,7 +49,7 @@ module Devise
       # Returns the token sent in the e-mail.
       def send_reset_password_instructions
         token = set_reset_password_token
-        send_reset_password_instructions_notification(token)
+        #send_reset_password_instructions_notification(token)
         User.send_password_reset(self, token)
 
         token
